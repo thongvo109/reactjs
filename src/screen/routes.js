@@ -6,15 +6,20 @@ import ItemDetail from "../components/store/detail";
 import NavBar from "./../components/home/nav";
 import NotFound from "./error/notfound";
 import AdminScreen from "./admin/index";
+import NavAdmin from "../components/home/nav-admin";
+import Products from "../screen/admin/products";
+import Reports from "./admin/reports";
 
 const MainRoutes = () => {
-    const url = window.location.pathname;
-  if (url === "/admin") {
+  const url = window.location.pathname;
+  if (url.search("/admin") === 0) {
     return (
       <BrowserRouter>
+        <NavAdmin />
         <Switch>
-          <Route exact path="/" component={AdminScreen} />
-          <Route path="*" component={NotFound} />
+          <Route exact path="/admin" component={AdminScreen} />
+          <Route path="/admin/products" component={Products} />
+          <Route path="/admin/reports" component={Reports} />
         </Switch>
       </BrowserRouter>
     );
