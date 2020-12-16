@@ -1,0 +1,4 @@
+class CourseModel {
+    id: number;
+    
+}

@@ -1,23 +1,25 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Register from "../components/register";
 import Login from "../components/login";
-import Home from "../home";
 import ItemDetail from "../components/store/detail";
-import NavBar from "./../components/home/nav";
 import NotFound from "./error/notfound";
-import AdminScreen from "./admin/index";
-import NavAdmin from "../components/home/nav-admin";
 import Products from "../screen/admin/products";
 import Reports from "./admin/reports";
+import HomeAdmin from "./admin/home";
+import MainApp from "../screen/main";
+import  AppBarHeading  from "../widget/appbar/appbarheading";
+import { makeStyles } from "@material-ui/core";
+
+
 
 const MainRoutes = () => {
+
   const url = window.location.pathname;
   if (url.search("/admin") === 0) {
     return (
       <BrowserRouter>
-        <NavAdmin />
         <Switch>
-          <Route exact path="/admin" component={AdminScreen} />
+          <Route exact path="/admin" component={HomeAdmin} />
           <Route path="/admin/products" component={Products} />
           <Route path="/admin/reports" component={Reports} />
         </Switch>
@@ -26,9 +28,9 @@ const MainRoutes = () => {
   } else {
     return (
       <BrowserRouter>
-        <NavBar></NavBar>
+        <AppBarHeading/>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={MainApp} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/courses/:slug" component={ItemDetail} />

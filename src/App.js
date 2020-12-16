@@ -1,9 +1,12 @@
-import './App.css';
-import MainRoutes from './screen/routes';
-
+import "./App.css";
+import MainRoutes from "./screen/routes";
+import React from "react";
 const App = () => {
-    return (
-       <MainRoutes/>
-    );
+
+  return (
+    <MainRoutes>
+      
+    </MainRoutes>
+  );
 };
 export default App;

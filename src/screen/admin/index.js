@@ -1,4 +1,4 @@
-import NavAdmin from "../../components/home/nav-admin";
+
 const AdminScreen = () => {
   return (
    <div className="home">

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import NavbarHome from './components/home/nav';
 import Store from './components/store';
+
 const Home = (props) => {
     const [user, setUser] = useState(null);
 
